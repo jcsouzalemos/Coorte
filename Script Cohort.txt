@@ -1,0 +1,657 @@
+SELECT 
+CO_MUNICIPIO,
+NO_MUNICIPIO,
+NO_UF,
+SG_UF,
+IMUNOBIOLOGICO,
+TIPO_DOSE,
+CO_ANO,
+CASE WHEN FAIXA_ETARIA= 'Menor de 1 ano' THEN NVL(SUM(QTD_DOSE),0) ELSE 0 END DMenor_de_1_ano,
+
+CASE WHEN FAIXA_ETARIA= '1 ano' THEN NVL(SUM(QTD_DOSE),0) ELSE 0 END D1_ANO,
+
+CASE WHEN FAIXA_ETARIA= '1 a 11 anos' THEN NVL(SUM(QTD_DOSE),0) ELSE 0 END D1_11_ANOS,
+
+CASE WHEN FAIXA_ETARIA= '1 a 11 anos' THEN NVL(TRUNC(SUM(QTD_DOSE)/11),0) ELSE 0 END D1_a_11_ANOS,
+
+CASE WHEN FAIXA_ETARIA= '2 anos' THEN NVL(SUM(QTD_DOSE),0) ELSE 0 END D2_ANOS,
+
+CASE WHEN FAIXA_ETARIA= '3 anos' THEN NVL(SUM(QTD_DOSE),0) ELSE 0 END D3_ANOS,
+
+CASE WHEN FAIXA_ETARIA= '4 anos' THEN NVL(SUM(QTD_DOSE),0) ELSE 0 END D4_ANOS,
+
+CASE WHEN FAIXA_ETARIA= '1 a 4 anos' THEN NVL(SUM(QTD_DOSE),0) ELSE 0 END D1_4_ANOS,
+
+CASE WHEN FAIXA_ETARIA= '1 a 4 anos' THEN NVL(TRUNC(SUM(QTD_DOSE)/4),0) ELSE 0 END D1_a_4_ANOS,
+
+CASE WHEN FAIXA_ETARIA= '5 anos' THEN NVL(SUM(QTD_DOSE),0) ELSE 0 END D5_ANOS,
+
+CASE WHEN FAIXA_ETARIA= '6 anos' THEN NVL(SUM(QTD_DOSE),0) ELSE 0 END D6_ANOS,
+
+CASE WHEN FAIXA_ETARIA= '5 a 6 anos' THEN NVL(SUM(QTD_DOSE),0) ELSE 0 END D5_6_ANOS,
+
+CASE WHEN FAIXA_ETARIA= '5 a 6 anos' THEN NVL(TRUNC(SUM(QTD_DOSE)/2),0)  ELSE 0 END D5_a_6_ANOS,
+
+CASE WHEN FAIXA_ETARIA= '5 a 12 anos' THEN NVL(SUM(QTD_DOSE),0) ELSE 0 END D5_12_ANOS,
+
+CASE WHEN FAIXA_ETARIA= '5 a 12 anos' THEN NVL(TRUNC(SUM(QTD_DOSE)/8),0) ELSE 0 END D5_a_12_ANOS,
+
+CASE WHEN FAIXA_ETARIA= '7 anos' THEN NVL(SUM(QTD_DOSE),0) ELSE 0 END D7_ANOS,
+
+CASE WHEN FAIXA_ETARIA= '7 a 11 anos' THEN NVL(SUM(QTD_DOSE),0) ELSE 0 END D7_11_ANOS,
+
+CASE WHEN FAIXA_ETARIA= '7 a 11 anos' THEN NVL(TRUNC(SUM(QTD_DOSE)/5),0) ELSE 0 END D7_a_11_ANOS,
+
+CASE WHEN FAIXA_ETARIA= '7 a 14 anos' THEN NVL(SUM(QTD_DOSE),0) ELSE 0 END D7_14_ANOS,
+
+CASE WHEN FAIXA_ETARIA= '7 a 14 anos' THEN NVL(TRUNC(SUM(QTD_DOSE)/8),0) ELSE 0 END D7_a_14_ANOS,
+
+CASE WHEN FAIXA_ETARIA= '8 anos' THEN NVL(SUM(QTD_DOSE),0) ELSE 0 END D8_ANOS,
+
+CASE WHEN FAIXA_ETARIA= '9 anos' THEN NVL(SUM(QTD_DOSE),0) ELSE 0 END D9_ANOS,
+
+CASE WHEN FAIXA_ETARIA= '9 a 12 anos' THEN NVL(SUM(QTD_DOSE),0) ELSE 0 END D9_12_ANOS,
+
+CASE WHEN FAIXA_ETARIA= '9 a 12 anos' THEN NVL(TRUNC(SUM(QTD_DOSE)/4),0) ELSE 0 END D9_a_12_ANOS,
+
+CASE WHEN FAIXA_ETARIA= '10 anos' THEN NVL(SUM(QTD_DOSE),0) ELSE 0 END D10_ANOS,
+
+CASE WHEN FAIXA_ETARIA= '11 anos' THEN NVL(SUM(QTD_DOSE),0) ELSE 0 END D11_ANOS,
+
+CASE WHEN FAIXA_ETARIA= '12 anos' THEN NVL(SUM(QTD_DOSE),0) ELSE 0 END D12_ANOS,
+
+CASE WHEN FAIXA_ETARIA= '12 a 14 anos' THEN NVL(SUM(QTD_DOSE),0) ELSE 0 END D12_14_ANOS,
+
+CASE WHEN FAIXA_ETARIA= '12 a 14 anos' THEN NVL(TRUNC(SUM(QTD_DOSE)/3),0) ELSE 0 END D12_a_14_ANOS,
+
+CASE WHEN FAIXA_ETARIA= 'Homens 12 a 49 anos' THEN NVL(SUM(QTD_DOSE),0) ELSE 0 END DHomens_12_49_ANOS,
+
+CASE WHEN FAIXA_ETARIA= 'Homens 12 a 49 anos' THEN NVL(TRUNC(SUM(QTD_DOSE)/38),0) ELSE 0 END DHomens_12_a_49_ANOS,
+
+CASE WHEN FAIXA_ETARIA= '13 anos' THEN NVL(SUM(QTD_DOSE),0) ELSE 0 END D13_ANOS,
+
+CASE WHEN FAIXA_ETARIA= '13 a 14 anos' THEN NVL(SUM(QTD_DOSE),0) ELSE 0 END D13_14_ANOS,
+
+CASE WHEN FAIXA_ETARIA= '13 a 14 anos' THEN NVL(TRUNC(SUM(QTD_DOSE)/2),0) ELSE 0 END D13_a_14_ANOS,
+
+CASE WHEN FAIXA_ETARIA= '13 a 19 anos' THEN NVL(SUM(QTD_DOSE),0) ELSE 0 END D13_19_ANOS,
+
+CASE WHEN FAIXA_ETARIA= '13 a 19 anos' THEN NVL(TRUNC(SUM(QTD_DOSE)/7),0) ELSE 0 END D13_a_19_ANOS,
+
+CASE WHEN FAIXA_ETARIA= '14 anos' THEN NVL(SUM(QTD_DOSE),0) ELSE 0 END D14_ANOS,
+
+CASE WHEN FAIXA_ETARIA= '15 anos' THEN NVL(SUM(QTD_DOSE),0) ELSE 0 END D15_ANOS,
+
+CASE WHEN FAIXA_ETARIA= '15 a 16 anos' THEN NVL(SUM(QTD_DOSE),0) ELSE 0 END D15_16_ANOS,
+
+CASE WHEN FAIXA_ETARIA= '15 a 16 anos' THEN NVL(TRUNC(SUM(QTD_DOSE)/2),0) ELSE 0 END D15_a_16_ANOS,
+
+CASE WHEN FAIXA_ETARIA= '15 a 19 anos' THEN NVL(SUM(QTD_DOSE),0) ELSE 0 END D15_19_ANOS,
+
+CASE WHEN FAIXA_ETARIA= '15 a 19 anos' THEN NVL(TRUNC(SUM(QTD_DOSE)/5),0) ELSE 0 END D15_a_19_ANOS,
+
+CASE WHEN FAIXA_ETARIA= '16 anos' THEN NVL(SUM(QTD_DOSE),0)ELSE 0 END D16_ANOS,
+
+CASE WHEN FAIXA_ETARIA= '17 anos' THEN NVL(SUM(QTD_DOSE),0) ELSE 0 END D17_ANOS,
+
+CASE WHEN FAIXA_ETARIA= '17 a 19 anos' THEN NVL(SUM(QTD_DOSE),0) ELSE 0 END D17_19_ANOS,
+
+CASE WHEN FAIXA_ETARIA= '17 a 19 anos' THEN NVL(TRUNC(SUM(QTD_DOSE)/3),0) ELSE 0 END D17_a_19_ANOS,
+
+CASE WHEN FAIXA_ETARIA= '18 anos' THEN NVL(SUM(QTD_DOSE),0) ELSE 0 END D18_ANOS,
+
+CASE WHEN FAIXA_ETARIA= '19 anos' THEN NVL(SUM(QTD_DOSE),0) ELSE 0 END D19_ANOS,
+
+CASE WHEN FAIXA_ETARIA= '20 anos' THEN NVL(SUM(QTD_DOSE),0) ELSE 0 END D20_ANOS,
+
+CASE WHEN FAIXA_ETARIA= '20 a 24 anos' THEN NVL(SUM(QTD_DOSE),0) ELSE 0 END D20_24_ANOS,
+
+CASE WHEN FAIXA_ETARIA= '20 a 24 anos' THEN NVL(TRUNC(SUM(QTD_DOSE)/5),0) ELSE 0 END D20_a_24_ANOS,
+
+CASE WHEN FAIXA_ETARIA= '20 a 29 anos' THEN NVL(SUM(QTD_DOSE),0) ELSE 0 END D20_29_ANOS,
+
+CASE WHEN FAIXA_ETARIA= '20 a 29 anos' THEN NVL(TRUNC(SUM(QTD_DOSE)/10),0) ELSE 0 END D20_a_29_ANOS,
+
+CASE WHEN FAIXA_ETARIA= '20 a 59 anos' THEN NVL(SUM(QTD_DOSE),0) ELSE 0 END D20_59_ANOS,
+
+CASE WHEN FAIXA_ETARIA= '20 a 59 anos' THEN NVL(TRUNC(SUM(QTD_DOSE)/40),0) ELSE 0 END D20_a_59_ANOS,
+
+CASE WHEN FAIXA_ETARIA= '21 anos' THEN NVL(SUM(QTD_DOSE),0) ELSE 0 END D21_ANOS,
+
+CASE WHEN FAIXA_ETARIA= '22 anos' THEN NVL(SUM(QTD_DOSE),0) ELSE 0 END D22_ANOS,
+
+CASE WHEN FAIXA_ETARIA= '23 anos' THEN NVL(SUM(QTD_DOSE),0) ELSE 0 END D23_ANOS,
+
+CASE WHEN FAIXA_ETARIA= '24 anos' THEN NVL(SUM(QTD_DOSE),0) ELSE 0 END D24_ANOS,
+
+CASE WHEN FAIXA_ETARIA= '25 anos' THEN NVL(SUM(QTD_DOSE),0) ELSE 0 END D25_ANOS,
+
+CASE WHEN FAIXA_ETARIA= '25 a 29 anos' THEN NVL(SUM(QTD_DOSE),0) ELSE 0 END D25_29_ANOS,
+
+CASE WHEN FAIXA_ETARIA= '25 a 29 anos' THEN NVL(TRUNC(SUM(QTD_DOSE)/5),0) ELSE 0 END D25_a_29_ANOS,
+
+CASE WHEN FAIXA_ETARIA= '26 anos' THEN NVL(SUM(QTD_DOSE),0) ELSE 0 END D26_ANOS,
+
+CASE WHEN FAIXA_ETARIA= '27 anos' THEN NVL(SUM(QTD_DOSE),0) ELSE 0 END D27_ANOS,
+
+CASE WHEN FAIXA_ETARIA= '28 anos' THEN NVL(SUM(QTD_DOSE),0) ELSE 0 END D28_ANOS,
+
+CASE WHEN FAIXA_ETARIA= '29 anos' THEN NVL(SUM(QTD_DOSE),0) ELSE 0 END D29_ANOS,
+
+CASE WHEN FAIXA_ETARIA= '30 anos' THEN NVL(SUM(QTD_DOSE),0) ELSE 0 END D30_ANOS,
+
+CASE WHEN FAIXA_ETARIA= '30 a 34 anos' THEN NVL(SUM(QTD_DOSE),0) ELSE 0 END D30_34_ANOS,
+
+CASE WHEN FAIXA_ETARIA= '30 a 34 anos' THEN NVL(TRUNC(SUM(QTD_DOSE)/5),0) ELSE 0 END D30_a_34_ANOS,
+
+CASE WHEN FAIXA_ETARIA= '30 a 39 anos' THEN NVL(SUM(QTD_DOSE),0) ELSE 0 END D30_39_ANOS,
+
+CASE WHEN FAIXA_ETARIA= '30 a 39 anos' THEN NVL(TRUNC(SUM(QTD_DOSE)/10),0) ELSE 0 END D30_a_39_ANOS,
+
+CASE WHEN FAIXA_ETARIA= '31 anos' THEN NVL(SUM(QTD_DOSE),0) ELSE 0 END D31_ANOS,
+
+CASE WHEN FAIXA_ETARIA= '32 anos' THEN NVL(SUM(QTD_DOSE),0) ELSE 0 END D32_ANOS,
+
+CASE WHEN FAIXA_ETARIA= '33 anos' THEN NVL(SUM(QTD_DOSE),0) ELSE 0 END D33_ANOS,
+
+CASE WHEN FAIXA_ETARIA= '34 anos' THEN NVL(SUM(QTD_DOSE),0) ELSE 0 END D34_ANOS,
+
+CASE WHEN FAIXA_ETARIA= '35 anos' THEN NVL(SUM(QTD_DOSE),0) ELSE 0 END D35_ANOS,
+
+CASE WHEN FAIXA_ETARIA= '35 a 39 anos' THEN NVL(SUM(QTD_DOSE),0) ELSE 0 END D35_39_ANOS,
+
+CASE WHEN FAIXA_ETARIA= '35 a 39 anos' THEN NVL(TRUNC(SUM(QTD_DOSE)/5),0) ELSE 0 END D35_a_39_ANOS,
+
+CASE WHEN FAIXA_ETARIA= '36 anos' THEN NVL(SUM(QTD_DOSE),0) ELSE 0 END D36_ANOS,
+
+CASE WHEN FAIXA_ETARIA= '37 anos' THEN NVL(SUM(QTD_DOSE),0) ELSE 0 END D37_ANOS,
+
+CASE WHEN FAIXA_ETARIA= '38 anos' THEN NVL(SUM(QTD_DOSE),0) ELSE 0 END D38_ANOS,
+
+CASE WHEN FAIXA_ETARIA= '39 anos' THEN NVL(SUM(QTD_DOSE),0) ELSE 0 END D39_ANOS,
+
+CASE WHEN FAIXA_ETARIA= '40 anos' THEN NVL(SUM(QTD_DOSE),0) ELSE 0 END D40_ANOS,
+
+CASE WHEN FAIXA_ETARIA= '40 a 44 anos' THEN NVL(SUM(QTD_DOSE),0) ELSE 0 END D40_44_ANOS,
+
+CASE WHEN FAIXA_ETARIA= '40 a 44 anos' THEN NVL(TRUNC(SUM(QTD_DOSE)/5),0) ELSE 0 END D40_a_44_ANOS,
+
+CASE WHEN FAIXA_ETARIA= '41 anos' THEN NVL(SUM(QTD_DOSE),0) ELSE 0 END D41_ANOS,
+
+CASE WHEN FAIXA_ETARIA= '42 anos' THEN NVL(SUM(QTD_DOSE),0) ELSE 0 END D42_ANOS,
+
+CASE WHEN FAIXA_ETARIA= '43 anos' THEN NVL(SUM(QTD_DOSE),0) ELSE 0 END D43_ANOS,
+
+CASE WHEN FAIXA_ETARIA= '44 anos' THEN NVL(SUM(QTD_DOSE),0) ELSE 0 END D44_ANOS,
+
+CASE WHEN FAIXA_ETARIA= '45 anos' THEN NVL(SUM(QTD_DOSE),0) ELSE 0 END D45_ANOS,
+
+CASE WHEN FAIXA_ETARIA= '45 a 49 anos' THEN NVL(SUM(QTD_DOSE),0) ELSE 0 END D45_49_ANOS,
+
+CASE WHEN FAIXA_ETARIA= '45 a 49 anos' THEN NVL(TRUNC(SUM(QTD_DOSE)/5),0) ELSE 0 END D45_a_49_ANOS, 
+
+CASE WHEN FAIXA_ETARIA= '46 anos' THEN NVL(SUM(QTD_DOSE),0) ELSE 0 END D46_ANOS,
+
+CASE WHEN FAIXA_ETARIA= '47 anos' THEN NVL(SUM(QTD_DOSE),0) ELSE 0 END D47_ANOS,
+
+CASE WHEN FAIXA_ETARIA= '48 anos' THEN NVL(SUM(QTD_DOSE),0) ELSE 0 END D48_ANOS,
+
+CASE WHEN FAIXA_ETARIA= '49 anos' THEN NVL(SUM(QTD_DOSE),0) ELSE 0 END D49_ANOS,
+
+CASE WHEN FAIXA_ETARIA= '50 anos' THEN NVL(SUM(QTD_DOSE),0) ELSE 0 END D50_ANOS,
+
+CASE WHEN FAIXA_ETARIA= '51 anos' THEN NVL(SUM(QTD_DOSE),0) ELSE 0 END D51_ANOS,
+
+CASE WHEN FAIXA_ETARIA= '52 anos' THEN NVL(SUM(QTD_DOSE),0) ELSE 0 END D52_ANOS,
+
+CASE WHEN FAIXA_ETARIA= '53 anos' THEN NVL(SUM(QTD_DOSE),0) ELSE 0 END D53_ANOS,
+
+CASE WHEN FAIXA_ETARIA= '54 anos' THEN NVL(SUM(QTD_DOSE),0) ELSE 0 END D54_ANOS,
+
+CASE WHEN FAIXA_ETARIA= '55 anos' THEN NVL(SUM(QTD_DOSE),0) ELSE 0 END D55_ANOS,
+
+CASE WHEN FAIXA_ETARIA= '56 anos' THEN NVL(SUM(QTD_DOSE),0) ELSE 0 END D56_ANOS,
+
+CASE WHEN FAIXA_ETARIA= '57 anos' THEN NVL(SUM(QTD_DOSE),0) ELSE 0 END D57_ANOS,
+
+CASE WHEN FAIXA_ETARIA= '58 anos' THEN NVL(SUM(QTD_DOSE),0) ELSE 0 END D58_ANOS,
+
+CASE WHEN FAIXA_ETARIA= '59 anos' THEN NVL(SUM(QTD_DOSE),0) ELSE 0 END D59_ANOS,
+
+CASE WHEN FAIXA_ETARIA= '50 a 59 anos' THEN NVL(SUM(QTD_DOSE),0) ELSE 0 END D50_59_ANOS,
+
+CASE WHEN FAIXA_ETARIA= '50 a 59 anos' THEN NVL(TRUNC(SUM(QTD_DOSE)/10),0) ELSE 0 END D50_a_59_ANOS,
+
+CASE WHEN FAIXA_ETARIA= '60 anos e mais' THEN NVL(SUM(QTD_DOSE),0) 
+WHEN FAIXA_ETARIA= '65 anos e mais' THEN NVL(SUM(QTD_DOSE),0) ELSE 0 END D60_ANOS_MAIS,
+
+CASE WHEN FAIXA_ETARIA= 'Ignorado' THEN NVL(SUM(QTD_DOSE),0) ELSE 0 END DIgnorado
+
+FROM(
+SELECT 
+LINHA.CO_MUNICIPIO,
+LINHA.NO_MUNICIPIO,
+case
+    when  SUBSTR(LINHA.CO_MUNICIPIO,1,2) = '11' then 'Rondônia'
+    when  SUBSTR(LINHA.CO_MUNICIPIO,1,2) = '12' then 'Acre'
+    when  SUBSTR(LINHA.CO_MUNICIPIO,1,2) = '13' then 'Amazonas'
+    when  SUBSTR(LINHA.CO_MUNICIPIO,1,2) = '14' then 'Roraima'
+    when  SUBSTR(LINHA.CO_MUNICIPIO,1,2) = '15' then 'Pará'
+    when  SUBSTR(LINHA.CO_MUNICIPIO,1,2) = '16' then 'Amapá'
+    when  SUBSTR(LINHA.CO_MUNICIPIO,1,2) = '17' then 'Tocantins'
+    when  SUBSTR(LINHA.CO_MUNICIPIO,1,2) = '21' then 'Maranhão'
+    when  SUBSTR(LINHA.CO_MUNICIPIO,1,2) = '22' then 'Piauí'
+    when  SUBSTR(LINHA.CO_MUNICIPIO,1,2) = '23' then 'Ceará'
+    when  SUBSTR(LINHA.CO_MUNICIPIO,1,2) = '24' then 'Rio Grande do Norte'
+    when  SUBSTR(LINHA.CO_MUNICIPIO,1,2) = '25' then 'Paraíba'
+    when  SUBSTR(LINHA.CO_MUNICIPIO,1,2) in('26','20') then 'Pernambuco'
+    when  SUBSTR(LINHA.CO_MUNICIPIO,1,2) = '27' then 'Alagoas'
+    when  SUBSTR(LINHA.CO_MUNICIPIO,1,2) = '28' then 'Sergipe'
+    when  SUBSTR(LINHA.CO_MUNICIPIO,1,2) = '29' then 'Bahia'
+    when  SUBSTR(LINHA.CO_MUNICIPIO,1,2) = '31' then 'Minas Gerais'
+    when  SUBSTR(LINHA.CO_MUNICIPIO,1,2) = '32' then 'Espírito Santo'
+    when  SUBSTR(LINHA.CO_MUNICIPIO,1,2) = '33' then 'Rio de Janeiro'
+    when  SUBSTR(LINHA.CO_MUNICIPIO,1,2) = '35' then 'São Paulo'
+    when  SUBSTR(LINHA.CO_MUNICIPIO,1,2) = '41' then 'Paraná'
+    when  SUBSTR(LINHA.CO_MUNICIPIO,1,2) = '42' then 'Santa Catarina'
+    when  SUBSTR(LINHA.CO_MUNICIPIO,1,2) = '43' then 'Rio Grande do Sul'
+    when  SUBSTR(LINHA.CO_MUNICIPIO,1,2) = '50' then 'Mato Grosso do Sul'
+    when  SUBSTR(LINHA.CO_MUNICIPIO,1,2)= '51' then 'Mato Grosso'
+    when  SUBSTR(LINHA.CO_MUNICIPIO,1,2) = '52' then 'Goiás'
+    when  SUBSTR(LINHA.CO_MUNICIPIO,1,2) = '53' then 'Distrito Federal'
+else 'Ignorado' end as NO_UF, 
+
+case
+    when  SUBSTR(LINHA.CO_MUNICIPIO,1,2)= '11' then 'RO'
+    when  SUBSTR(LINHA.CO_MUNICIPIO,1,2) = '12' then 'AC'
+    when  SUBSTR(LINHA.CO_MUNICIPIO,1,2) = '13' then 'AM'
+    when  SUBSTR(LINHA.CO_MUNICIPIO,1,2)= '14' then 'RR'
+    when  SUBSTR(LINHA.CO_MUNICIPIO,1,2)= '15' then 'PA'
+    when  SUBSTR(LINHA.CO_MUNICIPIO,1,2) = '16' then 'AP'
+    when  SUBSTR(LINHA.CO_MUNICIPIO,1,2)= '17' then 'TO'
+    when  SUBSTR(LINHA.CO_MUNICIPIO,1,2)= '21' then 'MA'
+    when  SUBSTR(LINHA.CO_MUNICIPIO,1,2) = '22' then 'PI'
+    when  SUBSTR(LINHA.CO_MUNICIPIO,1,2) = '23' then 'CE'
+    when  SUBSTR(LINHA.CO_MUNICIPIO,1,2)= '24' then 'RN'
+    when  SUBSTR(LINHA.CO_MUNICIPIO,1,2) = '25' then 'PB'
+    when  SUBSTR(LINHA.CO_MUNICIPIO,1,2) in('26','20') then 'PE'
+    when  SUBSTR(LINHA.CO_MUNICIPIO,1,2) = '27' then 'AL'
+    when  SUBSTR(LINHA.CO_MUNICIPIO,1,2) = '28' then 'SE'
+    when  SUBSTR(LINHA.CO_MUNICIPIO,1,2) = '29' then 'BA'
+    when  SUBSTR(LINHA.CO_MUNICIPIO,1,2) = '31' then 'MG'
+    when  SUBSTR(LINHA.CO_MUNICIPIO,1,2) = '32' then 'ES'
+    when  SUBSTR(LINHA.CO_MUNICIPIO,1,2) = '33' then 'RJ'
+    when  SUBSTR(LINHA.CO_MUNICIPIO,1,2) = '35' then 'SP'
+    when  SUBSTR(LINHA.CO_MUNICIPIO,1,2) = '41' then 'PR'
+    when  SUBSTR(LINHA.CO_MUNICIPIO,1,2) = '42' then 'SC'
+    when  SUBSTR(LINHA.CO_MUNICIPIO,1,2) = '43' then 'RS'
+    when  SUBSTR(LINHA.CO_MUNICIPIO,1,2) = '50' then 'MS'
+    when  SUBSTR(LINHA.CO_MUNICIPIO,1,2) = '51' then 'MG'
+    when  SUBSTR(LINHA.CO_MUNICIPIO,1,2) = '52' then 'GO'
+    when  SUBSTR(LINHA.CO_MUNICIPIO,1,2) = '53' then 'DF'
+else 'Ignorado' end as SG_UF, 
+LINHA.CO_ANO,
+case
+    when FATO.CO_FX_ETARIA between ' 0' and '-99' then 'Idade ignorada'
+    when  FATO.CO_FX_ETARIA in('A9','F1','F2') then 'Ate 30 dias'
+    when  FATO.CO_FX_ETARIA = 'B0' then '30 dias a 1 ano'
+    when  FATO.CO_FX_ETARIA = '72' then '2 meses'
+    when  FATO.CO_FX_ETARIA = '73' then '3 meses'
+    when  FATO.CO_FX_ETARIA = '74' then '4 meses'
+    when  FATO.CO_FX_ETARIA = '75' then '5 meses'
+    when  FATO.CO_FX_ETARIA = 'A0' then '6 meses'
+    when  FATO.CO_FX_ETARIA = 'A1' then '7 meses'
+    when  FATO.CO_FX_ETARIA in('--','G1','H2') then '6 meses a 1 ano'
+    when  FATO.CO_FX_ETARIA in('50','X3','X4','X6') then 'Menor de 1 ano'
+    when  FATO.CO_FX_ETARIA = '71' then 'Menor de 5 anos'
+    when  FATO.CO_FX_ETARIA in('51','F0','G2','X5') then '1 ano'
+    when  FATO.CO_FX_ETARIA in('52','F3','G3') then '2 anos'
+    when  FATO.CO_FX_ETARIA in('53','F4','G4') then '3 anos'
+    when  FATO.CO_FX_ETARIA in('54','F5','G5') then '4 anos'
+    when  FATO.CO_FX_ETARIA = '58' then '5 anos'
+    when  FATO.CO_FX_ETARIA = 'A2' then '6 anos'
+    when  FATO.CO_FX_ETARIA in('A5','C4','D6') then '9 anos'
+    when  FATO.CO_FX_ETARIA in('B3','C5','D7') then '10 anos'
+    when  FATO.CO_FX_ETARIA in('B4','C6','D8') then '11 anos'
+    when  FATO.CO_FX_ETARIA in('27','S2','R2') then '12 anos'
+    when  FATO.CO_FX_ETARIA in('B5','C7','D9') then '13 anos'
+    when  FATO.CO_FX_ETARIA in('B6','C8','E0') then '14 anos'
+    when  FATO.CO_FX_ETARIA in('B7','C9','E1') then '15 anos'
+    when  FATO.CO_FX_ETARIA in('B8','D0','E2') then '16 anos'
+    when  FATO.CO_FX_ETARIA in('B9','D1','E3') then '17 anos'
+    when  FATO.CO_FX_ETARIA in('C0','D2','E4') then '18 anos'
+    when  FATO.CO_FX_ETARIA in('C1','D3','E5') then '19 anos'
+    when  FATO.CO_FX_ETARIA = '17' then '1 a 2 anos'
+    when  FATO.CO_FX_ETARIA = '59' then '1 a 4 anos'
+    when  FATO.CO_FX_ETARIA = '10' then '1 a 11 anos'
+    when  FATO.CO_FX_ETARIA = '12' then '2 a 4 anos'
+    when  FATO.CO_FX_ETARIA = '18' then '3 a 8 anos'
+    when  FATO.CO_FX_ETARIA = '55' then '5 a 6 anos'
+    when  FATO.CO_FX_ETARIA = '13' then '5 a 8 anos'
+    when  FATO.CO_FX_ETARIA in('67','F7','G7') then '5 a 9 anos'
+    when  FATO.CO_FX_ETARIA = '21' then '5 a 10 anos'
+    when  FATO.CO_FX_ETARIA = 'B2' then '5 a 12 anos'
+    when  FATO.CO_FX_ETARIA = '19' then '5 a 14 anos'
+    when  FATO.CO_FX_ETARIA = '63' then '5 anos e mais'
+    when  FATO.CO_FX_ETARIA = '--' then '6 a 12 anos'
+    when  FATO.CO_FX_ETARIA = '60' then '6 a 14 anos'
+    when  FATO.CO_FX_ETARIA = '08' then '7 a 9 anos'
+    when  FATO.CO_FX_ETARIA = '64' then '7 a 11 anos'
+    when  FATO.CO_FX_ETARIA = '56' then '7 a 14 anos'
+    when  FATO.CO_FX_ETARIA = '25' then '7 a 17 anos'
+    when  FATO.CO_FX_ETARIA = '11' then '7 anos e mais'
+    when  FATO.CO_FX_ETARIA in('14','76') then '9 a 12 anos'
+    when  FATO.CO_FX_ETARIA = 'A3' then '10 a 11 anos'
+    when  FATO.CO_FX_ETARIA in('68','F8','G8') then '10 a 14 anos'
+    when  FATO.CO_FX_ETARIA = '22' then '11 a 14 anos'
+    when  FATO.CO_FX_ETARIA = 'B1' then '11 a 19 anos'
+    when  FATO.CO_FX_ETARIA = 'A8' then '7 a 8 anos'
+    when  FATO.CO_FX_ETARIA = '77' then '12 a 14 anos'
+    when  FATO.CO_FX_ETARIA = '65' then '12 anos e mais'
+    when  FATO.CO_FX_ETARIA = '99' then '12 a 49 anos'
+    when  FATO.CO_FX_ETARIA in('28','S3','R3') then '13 a 14 anos'
+    when  FATO.CO_FX_ETARIA = '15' then '13 a 19 anos'
+    when  FATO.CO_FX_ETARIA in('29','W1','W2') then '15 a 16 anos'
+    when  FATO.CO_FX_ETARIA in('20','87','S1','X1','X2','R1') then '15 a 19 anos'
+    when  FATO.CO_FX_ETARIA in('A4','F6','G6') then '15 a 49 anos'
+    when  FATO.CO_FX_ETARIA = '57' then '15 a 59 anos'
+    when  FATO.CO_FX_ETARIA in('30','S4','R4') then '17 a 19 anos'
+    when  FATO.CO_FX_ETARIA = '26' then '18 a 19 anos'
+    when  FATO.CO_FX_ETARIA in('31','S5','R5') then '20 a 24 anos'
+    when  FATO.CO_FX_ETARIA in('78','96') then '20 a 29 anos'
+    when  FATO.CO_FX_ETARIA = '16' then '20 a 59 anos'
+    when  FATO.CO_FX_ETARIA = 'A6' then '20 a 25 anos'
+    when  FATO.CO_FX_ETARIA in('C2','D4','E6') then '20 a 26 anos'
+    when  FATO.CO_FX_ETARIA = 'A7' then '26 a 27 anos'
+    when  FATO.CO_FX_ETARIA in('C3','D5','E7') then '27 e mais'
+    when  FATO.CO_FX_ETARIA in('32','A6','S6','R6') then '25 a 29 anos'
+    when  FATO.CO_FX_ETARIA in('33','S7','R7') then '30 a 34 anos'
+    when  FATO.CO_FX_ETARIA in('79','97') then '30 a 39 anos'
+    when  FATO.CO_FX_ETARIA in('34','S8','R8') then '35 a 39 anos'
+    when  FATO.CO_FX_ETARIA in('35','S9','R9') then '40 a 44 anos'
+    when  FATO.CO_FX_ETARIA in('80','94') then '40 a 49 anos'
+    when  FATO.CO_FX_ETARIA in('36','S0','R0') then '45 a 49 anos'
+    when  FATO.CO_FX_ETARIA = '09' then '50 a 59 anos'
+    when  FATO.CO_FX_ETARIA = '05' then '60 a 64 anos'
+    when  FATO.CO_FX_ETARIA = '69' then '60 anos e mais'
+    when  FATO.CO_FX_ETARIA = '81' then '65 a 69 anos'
+    when  FATO.CO_FX_ETARIA in('70','F9','G9') then '65 anos e mais'
+    when  FATO.CO_FX_ETARIA = '82' then '70 a 74 anos'
+    when  FATO.CO_FX_ETARIA = '83' then '75 a 79 anos'
+    when  FATO.CO_FX_ETARIA = '84' then '80 a 84 anos'
+    when  FATO.CO_FX_ETARIA = '85' then '85 a 89 anos'
+    when  FATO.CO_FX_ETARIA = '86' then '90 anos e mais'
+    when  FATO.CO_FX_ETARIA = 'W3' then 'Gestantes 10 a 11 anos'
+    when  FATO.CO_FX_ETARIA = '03' then 'Gestantes 12 a 14 anos'
+    when  FATO.CO_FX_ETARIA = '01' then 'Gestantes 15 a 49 anos'
+    when  FATO.CO_FX_ETARIA = '66' then 'Puérperas'
+    when  FATO.CO_FX_ETARIA = '04' then 'Não gestantes 12 a 14 anos'
+    when  FATO.CO_FX_ETARIA = '24' then 'Não gestantes 12 a 49 anos'
+    when  FATO.CO_FX_ETARIA = '61' then 'Não gestantes 15 a 49 anos'
+    when  FATO.CO_FX_ETARIA = '06' then 'Homens 12 a 14 anos'
+    when  FATO.CO_FX_ETARIA = '23' then 'Homens 12 a 49 anos'
+    when  FATO.CO_FX_ETARIA = '07' then 'Homens 15 a 49 anos'
+    when  FATO.CO_FX_ETARIA = '02' then 'Homens sem discriminação de idade'
+    when  FATO.CO_FX_ETARIA = '62' then 'Sem discriminação de idade'
+else 'Ignorado' end AS FAIXA_ETARIA,
+'SARAMPO' AS IMUNOBIOLOGICO,
+'1ª Dose' AS TIPO_DOSE,
+NVL(sum(qt_dose),0) as QTD_DOSE
+FROM
+(SELECT DISTINCT 
+DA.CO_ANO, 
+CASE WHEN SUBSTR(MUN.CO_MUNICIPIO,1,2)='53' THEN '530010' ELSE  MUN.CO_MUNICIPIO END CO_MUNICIPIO,
+CASE WHEN SUBSTR(MUN.CO_MUNICIPIO,1,2)='53' THEN 'BRASILIA' ELSE MUN.NO_MUNICIPIO END NO_MUNICIPIO
+FROM 
+DISSEMINACAO.TB_TBN_MUNICIPIO MUN,
+DISSEMINACAO.TB_TBN_PNI_DOSE_APLICADA DA
+where 
+mun.co_municipio NOT IN ('000000','666666','999999','110000')) LINHA
+LEFT JOIN DISSEMINACAO.TB_TBN_PNI_DOSE_APLICADA FATO ON LINHA.CO_MUNICIPIO = FATO.CO_MUNICIPIO AND LINHA.CO_ANO = FATO.CO_ANO
+AND FATO.CO_IMUNO IN ('21','23','24','55','57','70','71','89','97',
+'25','56','65','66','68','69') -- novo
+AND FATO.CO_DOSE in ('01','32','04','09','08') 
+AND FATO.CO_ANO between '1997' and '2022' -- 1 dose, dose unica, dose inicial e dose
+-- 1ª DOSE
+
+GROUP BY
+LINHA.CO_MUNICIPIO,
+LINHA.NO_MUNICIPIO,
+case
+    when  SUBSTR(LINHA.CO_MUNICIPIO,1,2) = '11' then 'Rondônia'
+    when  SUBSTR(LINHA.CO_MUNICIPIO,1,2) = '12' then 'Acre'
+    when  SUBSTR(LINHA.CO_MUNICIPIO,1,2) = '13' then 'Amazonas'
+    when  SUBSTR(LINHA.CO_MUNICIPIO,1,2) = '14' then 'Roraima'
+    when  SUBSTR(LINHA.CO_MUNICIPIO,1,2) = '15' then 'Pará'
+    when  SUBSTR(LINHA.CO_MUNICIPIO,1,2) = '16' then 'Amapá'
+    when  SUBSTR(LINHA.CO_MUNICIPIO,1,2) = '17' then 'Tocantins'
+    when  SUBSTR(LINHA.CO_MUNICIPIO,1,2) = '21' then 'Maranhão'
+    when  SUBSTR(LINHA.CO_MUNICIPIO,1,2) = '22' then 'Piauí'
+    when  SUBSTR(LINHA.CO_MUNICIPIO,1,2) = '23' then 'Ceará'
+    when  SUBSTR(LINHA.CO_MUNICIPIO,1,2) = '24' then 'Rio Grande do Norte'
+    when  SUBSTR(LINHA.CO_MUNICIPIO,1,2) = '25' then 'Paraíba'
+    when  SUBSTR(LINHA.CO_MUNICIPIO,1,2) in('26','20') then 'Pernambuco'
+    when  SUBSTR(LINHA.CO_MUNICIPIO,1,2) = '27' then 'Alagoas'
+    when  SUBSTR(LINHA.CO_MUNICIPIO,1,2) = '28' then 'Sergipe'
+    when  SUBSTR(LINHA.CO_MUNICIPIO,1,2) = '29' then 'Bahia'
+    when  SUBSTR(LINHA.CO_MUNICIPIO,1,2) = '31' then 'Minas Gerais'
+    when  SUBSTR(LINHA.CO_MUNICIPIO,1,2) = '32' then 'Espírito Santo'
+    when  SUBSTR(LINHA.CO_MUNICIPIO,1,2) = '33' then 'Rio de Janeiro'
+    when  SUBSTR(LINHA.CO_MUNICIPIO,1,2) = '35' then 'São Paulo'
+    when  SUBSTR(LINHA.CO_MUNICIPIO,1,2) = '41' then 'Paraná'
+    when  SUBSTR(LINHA.CO_MUNICIPIO,1,2) = '42' then 'Santa Catarina'
+    when  SUBSTR(LINHA.CO_MUNICIPIO,1,2) = '43' then 'Rio Grande do Sul'
+    when  SUBSTR(LINHA.CO_MUNICIPIO,1,2) = '50' then 'Mato Grosso do Sul'
+    when  SUBSTR(LINHA.CO_MUNICIPIO,1,2)= '51' then 'Mato Grosso'
+    when  SUBSTR(LINHA.CO_MUNICIPIO,1,2) = '52' then 'Goiás'
+    when  SUBSTR(LINHA.CO_MUNICIPIO,1,2) = '53' then 'Distrito Federal'
+else 'Ignorado' end, 
+
+case
+    when  SUBSTR(LINHA.CO_MUNICIPIO,1,2)= '11' then 'RO'
+    when  SUBSTR(LINHA.CO_MUNICIPIO,1,2) = '12' then 'AC'
+    when  SUBSTR(LINHA.CO_MUNICIPIO,1,2) = '13' then 'AM'
+    when  SUBSTR(LINHA.CO_MUNICIPIO,1,2)= '14' then 'RR'
+    when  SUBSTR(LINHA.CO_MUNICIPIO,1,2)= '15' then 'PA'
+    when  SUBSTR(LINHA.CO_MUNICIPIO,1,2) = '16' then 'AP'
+    when  SUBSTR(LINHA.CO_MUNICIPIO,1,2)= '17' then 'TO'
+    when  SUBSTR(LINHA.CO_MUNICIPIO,1,2)= '21' then 'MA'
+    when  SUBSTR(LINHA.CO_MUNICIPIO,1,2) = '22' then 'PI'
+    when  SUBSTR(LINHA.CO_MUNICIPIO,1,2) = '23' then 'CE'
+    when  SUBSTR(LINHA.CO_MUNICIPIO,1,2)= '24' then 'RN'
+    when  SUBSTR(LINHA.CO_MUNICIPIO,1,2) = '25' then 'PB'
+    when  SUBSTR(LINHA.CO_MUNICIPIO,1,2) in('26','20') then 'PE'
+    when  SUBSTR(LINHA.CO_MUNICIPIO,1,2) = '27' then 'AL'
+    when  SUBSTR(LINHA.CO_MUNICIPIO,1,2) = '28' then 'SE'
+    when  SUBSTR(LINHA.CO_MUNICIPIO,1,2) = '29' then 'BA'
+    when  SUBSTR(LINHA.CO_MUNICIPIO,1,2) = '31' then 'MG'
+    when  SUBSTR(LINHA.CO_MUNICIPIO,1,2) = '32' then 'ES'
+    when  SUBSTR(LINHA.CO_MUNICIPIO,1,2) = '33' then 'RJ'
+    when  SUBSTR(LINHA.CO_MUNICIPIO,1,2) = '35' then 'SP'
+    when  SUBSTR(LINHA.CO_MUNICIPIO,1,2) = '41' then 'PR'
+    when  SUBSTR(LINHA.CO_MUNICIPIO,1,2) = '42' then 'SC'
+    when  SUBSTR(LINHA.CO_MUNICIPIO,1,2) = '43' then 'RS'
+    when  SUBSTR(LINHA.CO_MUNICIPIO,1,2) = '50' then 'MS'
+    when  SUBSTR(LINHA.CO_MUNICIPIO,1,2) = '51' then 'MG'
+    when  SUBSTR(LINHA.CO_MUNICIPIO,1,2) = '52' then 'GO'
+    when  SUBSTR(LINHA.CO_MUNICIPIO,1,2) = '53' then 'DF'
+else 'Ignorado' end, 
+LINHA.CO_ANO,
+case
+    when FATO.CO_FX_ETARIA between ' 0' and '-99' then 'Idade ignorada'
+    when  FATO.CO_FX_ETARIA in('A9','F1','F2') then 'Ate 30 dias'
+    when  FATO.CO_FX_ETARIA = 'B0' then '30 dias a 1 ano'
+    when  FATO.CO_FX_ETARIA = '72' then '2 meses'
+    when  FATO.CO_FX_ETARIA = '73' then '3 meses'
+    when  FATO.CO_FX_ETARIA = '74' then '4 meses'
+    when  FATO.CO_FX_ETARIA = '75' then '5 meses'
+    when  FATO.CO_FX_ETARIA = 'A0' then '6 meses'
+    when  FATO.CO_FX_ETARIA = 'A1' then '7 meses'
+    when  FATO.CO_FX_ETARIA in('--','G1','H2') then '6 meses a 1 ano'
+    when  FATO.CO_FX_ETARIA in('50','X3','X4','X6') then 'Menor de 1 ano'
+    when  FATO.CO_FX_ETARIA = '71' then 'Menor de 5 anos'
+    when  FATO.CO_FX_ETARIA in('51','F0','G2','X5') then '1 ano'
+    when  FATO.CO_FX_ETARIA in('52','F3','G3') then '2 anos'
+    when  FATO.CO_FX_ETARIA in('53','F4','G4') then '3 anos'
+    when  FATO.CO_FX_ETARIA in('54','F5','G5') then '4 anos'
+    when  FATO.CO_FX_ETARIA = '58' then '5 anos'
+    when  FATO.CO_FX_ETARIA = 'A2' then '6 anos'
+    when  FATO.CO_FX_ETARIA in('A5','C4','D6') then '9 anos'
+    when  FATO.CO_FX_ETARIA in('B3','C5','D7') then '10 anos'
+    when  FATO.CO_FX_ETARIA in('B4','C6','D8') then '11 anos'
+    when  FATO.CO_FX_ETARIA in('27','S2','R2') then '12 anos'
+    when  FATO.CO_FX_ETARIA in('B5','C7','D9') then '13 anos'
+    when  FATO.CO_FX_ETARIA in('B6','C8','E0') then '14 anos'
+    when  FATO.CO_FX_ETARIA in('B7','C9','E1') then '15 anos'
+    when  FATO.CO_FX_ETARIA in('B8','D0','E2') then '16 anos'
+    when  FATO.CO_FX_ETARIA in('B9','D1','E3') then '17 anos'
+    when  FATO.CO_FX_ETARIA in('C0','D2','E4') then '18 anos'
+    when  FATO.CO_FX_ETARIA in('C1','D3','E5') then '19 anos'
+    when  FATO.CO_FX_ETARIA = '17' then '1 a 2 anos'
+    when  FATO.CO_FX_ETARIA = '59' then '1 a 4 anos'
+    when  FATO.CO_FX_ETARIA = '10' then '1 a 11 anos'
+    when  FATO.CO_FX_ETARIA = '12' then '2 a 4 anos'
+    when  FATO.CO_FX_ETARIA = '18' then '3 a 8 anos'
+    when  FATO.CO_FX_ETARIA = '55' then '5 a 6 anos'
+    when  FATO.CO_FX_ETARIA = '13' then '5 a 8 anos'
+    when  FATO.CO_FX_ETARIA in('67','F7','G7') then '5 a 9 anos'
+    when  FATO.CO_FX_ETARIA = '21' then '5 a 10 anos'
+    when  FATO.CO_FX_ETARIA = 'B2' then '5 a 12 anos'
+    when  FATO.CO_FX_ETARIA = '19' then '5 a 14 anos'
+    when  FATO.CO_FX_ETARIA = '63' then '5 anos e mais'
+    when  FATO.CO_FX_ETARIA = '--' then '6 a 12 anos'
+    when  FATO.CO_FX_ETARIA = '60' then '6 a 14 anos'
+    when  FATO.CO_FX_ETARIA = '08' then '7 a 9 anos'
+    when  FATO.CO_FX_ETARIA = '64' then '7 a 11 anos'
+    when  FATO.CO_FX_ETARIA = '56' then '7 a 14 anos'
+    when  FATO.CO_FX_ETARIA = '25' then '7 a 17 anos'
+    when  FATO.CO_FX_ETARIA = '11' then '7 anos e mais'
+    when  FATO.CO_FX_ETARIA in('14','76') then '9 a 12 anos'
+    when  FATO.CO_FX_ETARIA = 'A3' then '10 a 11 anos'
+    when  FATO.CO_FX_ETARIA in('68','F8','G8') then '10 a 14 anos'
+    when  FATO.CO_FX_ETARIA = '22' then '11 a 14 anos'
+    when  FATO.CO_FX_ETARIA = 'B1' then '11 a 19 anos'
+    when  FATO.CO_FX_ETARIA = 'A8' then '7 a 8 anos'
+    when  FATO.CO_FX_ETARIA = '77' then '12 a 14 anos'
+    when  FATO.CO_FX_ETARIA = '65' then '12 anos e mais'
+    when  FATO.CO_FX_ETARIA = '99' then '12 a 49 anos'
+    when  FATO.CO_FX_ETARIA in('28','S3','R3') then '13 a 14 anos'
+    when  FATO.CO_FX_ETARIA = '15' then '13 a 19 anos'
+    when  FATO.CO_FX_ETARIA in('29','W1','W2') then '15 a 16 anos'
+    when  FATO.CO_FX_ETARIA in('20','87','S1','X1','X2','R1') then '15 a 19 anos'
+    when  FATO.CO_FX_ETARIA in('A4','F6','G6') then '15 a 49 anos'
+    when  FATO.CO_FX_ETARIA = '57' then '15 a 59 anos'
+    when  FATO.CO_FX_ETARIA in('30','S4','R4') then '17 a 19 anos'
+    when  FATO.CO_FX_ETARIA = '26' then '18 a 19 anos'
+    when  FATO.CO_FX_ETARIA in('31','S5','R5') then '20 a 24 anos'
+    when  FATO.CO_FX_ETARIA in('78','96') then '20 a 29 anos'
+    when  FATO.CO_FX_ETARIA = '16' then '20 a 59 anos'
+    when  FATO.CO_FX_ETARIA = 'A6' then '20 a 25 anos'
+    when  FATO.CO_FX_ETARIA in('C2','D4','E6') then '20 a 26 anos'
+    when  FATO.CO_FX_ETARIA = 'A7' then '26 a 27 anos'
+    when  FATO.CO_FX_ETARIA in('C3','D5','E7') then '27 e mais'
+    when  FATO.CO_FX_ETARIA in('32','A6','S6','R6') then '25 a 29 anos'
+    when  FATO.CO_FX_ETARIA in('33','S7','R7') then '30 a 34 anos'
+    when  FATO.CO_FX_ETARIA in('79','97') then '30 a 39 anos'
+    when  FATO.CO_FX_ETARIA in('34','S8','R8') then '35 a 39 anos'
+    when  FATO.CO_FX_ETARIA in('35','S9','R9') then '40 a 44 anos'
+    when  FATO.CO_FX_ETARIA in('80','94') then '40 a 49 anos'
+    when  FATO.CO_FX_ETARIA in('36','S0','R0') then '45 a 49 anos'
+    when  FATO.CO_FX_ETARIA = '09' then '50 a 59 anos'
+    when  FATO.CO_FX_ETARIA = '05' then '60 a 64 anos'
+    when  FATO.CO_FX_ETARIA = '69' then '60 anos e mais'
+    when  FATO.CO_FX_ETARIA = '81' then '65 a 69 anos'
+    when  FATO.CO_FX_ETARIA in('70','F9','G9') then '65 anos e mais'
+    when  FATO.CO_FX_ETARIA = '82' then '70 a 74 anos'
+    when  FATO.CO_FX_ETARIA = '83' then '75 a 79 anos'
+    when  FATO.CO_FX_ETARIA = '84' then '80 a 84 anos'
+    when  FATO.CO_FX_ETARIA = '85' then '85 a 89 anos'
+    when  FATO.CO_FX_ETARIA = '86' then '90 anos e mais'
+    when  FATO.CO_FX_ETARIA = 'W3' then 'Gestantes 10 a 11 anos'
+    when  FATO.CO_FX_ETARIA = '03' then 'Gestantes 12 a 14 anos'
+    when  FATO.CO_FX_ETARIA = '01' then 'Gestantes 15 a 49 anos'
+    when  FATO.CO_FX_ETARIA = '66' then 'Puérperas'
+    when  FATO.CO_FX_ETARIA = '04' then 'Não gestantes 12 a 14 anos'
+    when  FATO.CO_FX_ETARIA = '24' then 'Não gestantes 12 a 49 anos'
+    when  FATO.CO_FX_ETARIA = '61' then 'Não gestantes 15 a 49 anos'
+    when  FATO.CO_FX_ETARIA = '06' then 'Homens 12 a 14 anos'
+    when  FATO.CO_FX_ETARIA = '23' then 'Homens 12 a 49 anos'
+    when  FATO.CO_FX_ETARIA = '07' then 'Homens 15 a 49 anos'
+    when  FATO.CO_FX_ETARIA = '02' then 'Homens sem discriminação de idade'
+    when  FATO.CO_FX_ETARIA = '62' then 'Sem discriminação de idade'
+else 'Ignorado' end,
+'1ª Dose'
+)
+GROUP BY
+CO_MUNICIPIO,
+NO_MUNICIPIO,
+NO_UF,
+SG_UF,
+IMUNOBIOLOGICO,
+TIPO_DOSE,
+FAIXA_ETARIA,
+CO_ANO 
+ORDER BY 
+CO_MUNICIPIO,
+NO_MUNICIPIO,
+NO_UF,
+SG_UF,
+IMUNOBIOLOGICO,
+TIPO_DOSE,
+FAIXA_ETARIA,
+CO_ANO 
+DESC)
+GROUP BY
+CO_MUNICIPIO,
+NO_MUNICIPIO,
+NO_UF,
+SG_UF,
+IMUNOBIOLOGICO,
+TIPO_DOSE,
+CO_ANO
+ORDER BY
+CO_MUNICIPIO,
+NO_MUNICIPIO,
+NO_UF,
+SG_UF,
+IMUNOBIOLOGICO,
+TIPO_DOSE,
+CO_ANO 
+DESC)
+GROUP BY
+CO_MUNICIPIO,
+NO_MUNICIPIO,
+NO_UF,
+SG_UF,
+IMUNOBIOLOGICO,
+TIPO_DOSE,
+CO_ANO
+ORDER BY 
+CO_MUNICIPIO,
+NO_MUNICIPIO,
+NO_UF,
+SG_UF,
+IMUNOBIOLOGICO,
+TIPO_DOSE,
+CO_ANO 
+DESC)
+WHERE 
+CO_ANO >='1997' AND
+CO_MUNICIPIO <>'431453'
+GROUP BY
+CO_MUNICIPIO,
+--NO_MUNICIPIO,
+NO_UF,
+SG_UF,
+IMUNOBIOLOGICO,
+TIPO_DOSE,
+CO_ANO
+ORDER BY 
+CO_MUNICIPIO,
+--NO_MUNICIPIO,
+NO_UF,
+SG_UF,
+IMUNOBIOLOGICO,
+TIPO_DOSE,
+CO_ANO 
+DESC)
